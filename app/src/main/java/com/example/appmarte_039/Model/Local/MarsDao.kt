@@ -13,9 +13,9 @@ import com.example.appmarte_039.Model.Remote.MarsRealState
 @Dao
 interface MarsDao {
 
-
+// estaba recibiendo marsdatabase
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMars(mars: MarsDatabase)
+    suspend fun insertMars(mars: MarsRealState)
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -44,8 +44,9 @@ interface MarsDao {
     fun getMarsByType(type: String): LiveData<MarsRealState>
 
     // filtrar por id
+    // correjir  id es un Int
     @Query("SELECT * FROM mars_table WHERE id = :id")
-    fun getMarsById(id: String): LiveData<MarsRealState>
+    fun getMarsById(id: Int): LiveData<MarsRealState>
 
 
 }
