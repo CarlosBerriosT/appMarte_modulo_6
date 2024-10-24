@@ -12,6 +12,8 @@ import retrofit2.Response
 class MarsRepository ( private val marsDao : MarsDao) {
 
 
+
+    //**************************Tiene que ver con la api MarsApi
     // llamar al metodo de conexión
     private val retrofitClient = RetrofitClient.getRetrofit()
 
@@ -68,7 +70,9 @@ class MarsRepository ( private val marsDao : MarsDao) {
                     in 200..299 -> response?.body().let {
 
                         if (it != null) {
+
                             marsDao.insertAllMars(it)
+                            Log.d("TERRENOS", "$it")
                         }
                     }
 
@@ -83,6 +87,50 @@ class MarsRepository ( private val marsDao : MarsDao) {
             }
 
         }
+
+
+
+    //******************** FUNCIONES DEL DAO CRUD*********************
+
+    // traer elemento por type
+    fun getMarsByType(type: String) : LiveData<MarsRealState>{
+        return  getMarsByType(type)
+    }
+
+
+    // traer por elemento por id
+    fun getMarsById(id: Int) : LiveData<MarsRealState>{
+        return  getMarsById(id)
+    }
+
+    // val  tiene con  modelo local
+     val listAllTerrains : LiveData<List<MarsRealState>> = marsDao.getAllMars()
+
+
+     //INSERT
+
+     suspend fun  insertMars(mars: MarsRealState){
+         marsDao.insertMars(mars)
+     }
+
+
+    // UPDATE
+
+
+    suspend fun  updateMars(mars: MarsRealState){
+        marsDao.updateMars(mars)
+    }
+
+  // DELETE
+    suspend fun  deleteAll(){
+        marsDao.deleteAll()
+    }
+
+
+    // Get Id
+    fun getTerrainsById(id:Int) :LiveData<MarsRealState>{
+        return marsDao.getMarsById(id)
+    }
 
 
 
