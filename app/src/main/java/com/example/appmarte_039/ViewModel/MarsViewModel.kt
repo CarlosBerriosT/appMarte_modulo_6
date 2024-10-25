@@ -18,8 +18,10 @@ class MarsViewModel(application: Application): AndroidViewModel(application) {
     private val repository : MarsRepository
 
     // representa los terrenos de marte la respuesta de la Api
+// al ser letenitit var no se asigna un valor , por ende no carga
+    // no se esta inicializando un valor
+    //lateinit var  liveDatafromInternet : LiveData<List<MarsRealState>> eso es para la forma antigua
 
-    lateinit var  liveDatafromInternet : LiveData<List<MarsRealState>>
 
     // para mostrar lo que estamos de recibiendo
     val allMars : LiveData<List<MarsRealState>>
@@ -34,11 +36,10 @@ class MarsViewModel(application: Application): AndroidViewModel(application) {
             repository.fechDataFromInternetCoroutines()
         }
         allMars = repository.listAllTerrains
-        liveDatafromInternet = repository.datafromInternet
+
 
         // para testear NO SE ACTUALIZA   aca no se puede observar . hay que observar desde la vista
-
-        liveDatafromInternet.observeForever { data ->
+            allMars.observeForever { data ->
             Log.d("MarsViewModel", "data Received in View Model : $data")
 
         }

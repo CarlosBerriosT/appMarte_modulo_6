@@ -41,16 +41,14 @@ class FirstFragment : Fragment() {
 
 
 
-
-       /*viewModel.liveDatafromInternet.observe(viewLifecycleOwner,Observer {
-            it?.let {
-                _binding.textview.text = it.toString()
-
-                Log.d("ListaVista", it.toString())
-
+        viewModel.allMars.observe(viewLifecycleOwner, Observer { data ->
+            if (data != null) {
+                _binding.textView.text = data.toString()
+                Log.d("ListaVista", "Datos recibidos: $data")
+            } else {
+                Log.d("ListaVista", "Sin datos")
             }
-
-        })*/
+        })
 
         // referecio  adapter
 
