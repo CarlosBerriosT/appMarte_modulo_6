@@ -26,7 +26,7 @@ interface MarsDao {
     suspend fun updateMars(mars: MarsRealState)
 
     @Delete
-    suspend fun deleteTask(mars: MarsRealState)
+    suspend fun deleteMars(mars: MarsRealState)
 
 
     @Query("DELETE FROM mars_table")

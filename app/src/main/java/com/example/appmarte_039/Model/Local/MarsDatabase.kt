@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.appmarte_039.Model.Remote.MarsRealState
 
 
-@Database(entities =[ MarsRealState::class] , version = 1, exportSchema = false)
+@Database(entities =[ MarsRealState::class] , version = 1)
 abstract class MarsDatabase : RoomDatabase() {
 
     // REFERENCIA AL DAO PARTE LOCAL

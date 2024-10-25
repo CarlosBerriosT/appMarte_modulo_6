@@ -61,11 +61,8 @@ class MarsRepository ( private val marsDao : MarsDao) {
 
         suspend fun  fechDataFromInternetCoroutines (){
 
-            Log.d("Repo", "nueva forma")
-
             try {
                 val response = retrofitClient.fetchMarsDataCoroutines()
-
                 when (response.code()) {
                     in 200..299 -> response?.body().let {
 
