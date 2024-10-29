@@ -14,7 +14,7 @@ interface MarsApi {
 
 
 
-    //se trabaja con corrutinas
+    //se trabaja con corrutinas esta versión se utilizando
     @GET("realestate")
     suspend fun  fetchMarsDataCoroutines():Response<List<MarsRealState>>
 }

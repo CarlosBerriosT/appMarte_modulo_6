@@ -17,14 +17,15 @@ class MarsViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository : MarsRepository
 
-    // representa los terrenos de marte la respuesta de la Api
-// al ser letenitit var no se asigna un valor , por ende no carga
-    // no se esta inicializando un valor
-    //lateinit var  liveDatafromInternet : LiveData<List<MarsRealState>> eso es para la forma antigua
+    // 1- sin Corrutinas representa los terrenos de marte la respuesta de la Api
+    // al ser letenitit var no se asigna un valor , por ende no carga
+    // no se esta inicializando un valor  en el init se debe actylizar
+   // lateinit var  liveDatafromInternet : LiveData<List<MarsRealState>> //eso es para la forma antigua
 
 
+    // 2, Con corrutinas
     // para mostrar lo que estamos de recibiendo
-    val allMars : LiveData<List<MarsRealState>>
+     val allMars : LiveData<List<MarsRealState>>
 
 
     init {
@@ -32,53 +33,60 @@ class MarsViewModel(application: Application): AndroidViewModel(application) {
         repository = MarsRepository(MarsDao)
 
         viewModelScope.launch {
-           // ACA SE HACE LA INSERCIÓN
+            //1.- Método sin Corrutinas
+            //  liveDatafromInternet = repository.fetchDataMars()
+
+            // 2-ACA SE HACE LA INSERCIÓN Con corrutinas
             repository.fechDataFromInternetCoroutines()
         }
+
+        //parte 2
         allMars = repository.listAllTerrains
 
 
+        // parte 1. actualzamos los datos desde el repositorios
+        // liveDatafromInternet = repository.datafromInternet
+
         // para testear NO SE ACTUALIZA   aca no se puede observar . hay que observar desde la vista
-            allMars.observeForever { data ->
+        allMars.observeForever { data ->
             Log.d("MarsViewModel", "data Received in View Model : $data")
 
         }
 
-}
+    }
 
 
 // funcion para seleccionar
 
-private var selectedMarsTerrains: MutableLiveData<MarsRealState> = MutableLiveData()
+    private var selectedMarsTerrains: MutableLiveData<MarsRealState> = MutableLiveData()
 
 // creamos esta función para seleccionar
 
-fun seleted (mars:MarsRealState)
-{
+    fun selected(mars: MarsRealState) {
 
-selectedMarsTerrains.value = mars
-}
-
-
-fun seletedItem():LiveData<MarsRealState> = selectedMarsTerrains
+        selectedMarsTerrains.value = mars
+    }
 
 
-// INSERT
-fun insertMars(mars:MarsRealState) =  viewModelScope.launch {
-repository.insertMars(mars)
-}
+    fun seletedItem(): LiveData<MarsRealState> = selectedMarsTerrains
+
+
+    // INSERT
+    fun insertMars(mars: MarsRealState) = viewModelScope.launch {
+        repository.insertMars(mars)
+    }
 
 // UPDATE
 
-fun updateMars(mars:MarsRealState) =  viewModelScope.launch {
-repository.updateMars(mars)
-}
+    fun updateMars(mars: MarsRealState) = viewModelScope.launch {
+        repository.updateMars(mars)
+    }
 
 // GET FOR ID
 
-fun getMarsById(id:Int) :LiveData<MarsRealState>{
-return  repository.getMarsById(id)
-}
+    fun getMarsById(id: Int): LiveData<MarsRealState> {
+        return repository.getMarsById(id)
+    }
 }
 
 

@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.appmarte_039.R
 import com.example.appmarte_039.ViewModel.AdapterMars
 import com.example.appmarte_039.ViewModel.MarsViewModel
 import com.example.appmarte_039.databinding.FragmentFirstBinding
@@ -41,14 +43,14 @@ class FirstFragment : Fragment() {
 
 
 
-        viewModel.allMars.observe(viewLifecycleOwner, Observer { data ->
+      /*  viewModel.allMars.observe(viewLifecycleOwner, Observer { data ->
             if (data != null) {
                 _binding.textView.text = data.toString()
                 Log.d("ListaVista", "Datos recibidos: $data")
             } else {
                 Log.d("ListaVista", "Sin datos")
             }
-        })
+        })*/
 
         // referecio  adapter
 
@@ -67,6 +69,14 @@ class FirstFragment : Fragment() {
         })
 
 
+     adapter.selectedTerrain.observe(viewLifecycleOwner,Observer{
+
+         it.let {
+
+             viewModel.selected(it)
+             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+         }
+     })
 
     }
 }

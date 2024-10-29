@@ -45,6 +45,8 @@ val selectedTerrain = MutableLiveData<MarsRealState>()
 
         override fun onClick(p0: View?) {
         // para seleccionar
+
+            selectedTerrain.value = listaMarsItem[adapterPosition]
         }
 
 
