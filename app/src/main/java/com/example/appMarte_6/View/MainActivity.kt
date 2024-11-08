@@ -1,4 +1,5 @@
-package com.example.appmarte_039.View
+package com.example.appMarte_6.View
+
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,8 +10,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.example.appmarte_039.R
-import com.example.appmarte_039.databinding.ActivityMainBinding
+import com.example.appmarte_6.R
+import com.example.appmarte_6.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

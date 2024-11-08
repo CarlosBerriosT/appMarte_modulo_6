@@ -1,11 +1,11 @@
-package com.example.appmarte_039.Model
+package com.example.appMarte_6.Model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.appmarte_039.Model.Local.MarsDao
-import com.example.appmarte_039.Model.Remote.MarsRealState
-import com.example.appmarte_039.Model.Remote.RetrofitClient
+import com.example.appMarte_6.Model.Local.MarsDao
+import com.example.appMarte_6.Model.Remote.MarsRealState
+import com.example.appMarte_6.Model.Remote.RetrofitClient
 import retrofit2.Call
 import retrofit2.Response
 

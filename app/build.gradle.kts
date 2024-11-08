@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.appmarte_039"
+    namespace = "com.example.appmarte_6"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.appmarte_039"
-        minSdk = 31
+        applicationId = "com.example.appmarte_6"
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

@@ -1,4 +1,4 @@
-package com.example.appmarte_039.View
+package com.example.appMarte_6.View
 
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +10,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.appmarte_039.R
-import com.example.appmarte_039.ViewModel.AdapterMars
-import com.example.appmarte_039.ViewModel.MarsViewModel
-import com.example.appmarte_039.databinding.FragmentFirstBinding
+import com.example.appMarte_6.ViewModel.AdapterMars
+import com.example.appMarte_6.ViewModel.MarsViewModel
+import com.example.appmarte_6.R
+import com.example.appmarte_6.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.

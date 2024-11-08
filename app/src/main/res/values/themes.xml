@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.APPMARTE_039" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.appMarte_6" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.APPMARTE_039" parent="Base.Theme.APPMARTE_039" />
+    <style name="Theme.appMarte_6" parent="Base.Theme.appMarte_6" />
 </resources>

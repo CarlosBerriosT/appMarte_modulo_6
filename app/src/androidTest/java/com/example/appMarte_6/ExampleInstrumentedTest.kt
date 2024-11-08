@@ -1,4 +1,4 @@
-package com.example.appmarte_039
+package com.example.appMarte_6
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

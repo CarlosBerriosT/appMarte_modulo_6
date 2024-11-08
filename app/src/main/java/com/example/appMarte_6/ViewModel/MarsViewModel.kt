@@ -1,4 +1,4 @@
-package com.example.appmarte_039.ViewModel
+package com.example.appMarte_6.ViewModel
 
 import android.app.Application
 import android.util.Log
@@ -6,9 +6,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.appmarte_039.Model.Local.MarsDatabase
-import com.example.appmarte_039.Model.MarsRepository
-import com.example.appmarte_039.Model.Remote.MarsRealState
+import com.example.appMarte_6.Model.Local.MarsDatabase
+import com.example.appMarte_6.Model.MarsRepository
+import com.example.appMarte_6.Model.Remote.MarsRealState
 import kotlinx.coroutines.launch
 
 class MarsViewModel(application: Application): AndroidViewModel(application) {

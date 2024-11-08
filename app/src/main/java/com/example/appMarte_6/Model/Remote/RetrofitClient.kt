@@ -1,4 +1,4 @@
-package com.example.appmarte_039.Model.Remote
+package com.example.appMarte_6.Model.Remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

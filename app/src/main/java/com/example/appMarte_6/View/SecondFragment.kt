@@ -1,4 +1,4 @@
-package com.example.appmarte_039.View
+package com.example.appMarte_6.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.appmarte_039.R
-import com.example.appmarte_039.ViewModel.MarsViewModel
-import com.example.appmarte_039.databinding.FragmentSecondBinding
+import com.example.appMarte_6.ViewModel.MarsViewModel
+import com.example.appmarte_6.R
+import com.example.appmarte_6.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

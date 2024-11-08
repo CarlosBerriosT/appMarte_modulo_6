@@ -1,4 +1,4 @@
-package com.example.appmarte_039.ViewModel
+package com.example.appMarte_6.ViewModel
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.appmarte_039.Model.Remote.MarsRealState
-import com.example.appmarte_039.databinding.MarsItemBinding
+import com.example.appMarte_6.Model.Remote.MarsRealState
+import com.example.appmarte_6.databinding.MarsItemBinding
 
 class AdapterMars : RecyclerView.Adapter<AdapterMars.MarsVH>() {
 
@@ -28,7 +28,7 @@ val selectedTerrain = MutableLiveData<MarsRealState>()
 
 
 
-    inner class MarsVH(private val binding :MarsItemBinding):
+    inner class MarsVH(private val binding : MarsItemBinding):
             RecyclerView.ViewHolder(binding.root),
         View.OnClickListener{
 

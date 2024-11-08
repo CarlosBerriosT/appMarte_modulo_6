@@ -1,4 +1,4 @@
-package com.example.appmarte_039.Model.Remote
+package com.example.appMarte_6.Model.Remote
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

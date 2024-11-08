@@ -1,4 +1,4 @@
-package com.example.appmarte_039
+package com.example.appMarte_6
 
 import org.junit.Test
 
