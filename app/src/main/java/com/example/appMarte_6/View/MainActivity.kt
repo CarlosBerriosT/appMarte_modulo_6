@@ -1,4 +1,4 @@
-package com.example.appMarte_6.View
+package com.example.appmarte_6.view
 
 
 import android.os.Bundle
